@@ -1,0 +1,119 @@
+site_name: Lean4Game Documentation
+site_description: Interactive Lean 4 Game Platform - Create and Play Mathematical Proof Games
+site_author: Lean Community
+site_url: https://leanprover-community.github.io/lean4game/
+
+repo_name: leanprover-community/lean4game
+repo_url: https://github.com/leanprover-community/lean4game
+edit_uri: edit/main/docs/
+
+docs_dir: docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo # 换个主题
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.prune
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.action.view
+  language: en
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+          site_name: "Lean4Game Documentation"
+        - locale: zh
+          name: 中文
+          build: true
+          site_name: "Lean4Game 文档"
+          nav_translations:
+            Home: 首页
+            Getting Started: 快速开始
+            Game Development: 游戏开发
+            Server & Deployment: 服务器与部署
+            Reference: 参考文档
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  alternate:
+    - name: English
+      link: /lean4game/
+      lang: en
+    - name: 中文
+      link: /lean4game/zh/
+      lang: zh
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/leanprover-community/lean4game
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Running Locally: running_locally.md
+    - Creating a Game: create_game.md
+    - Troubleshooting: troubleshoot.md
+  - Game Development:
+    - Writing Exercises: writing_exercises.md
+    - Hints System: hints.md
+    - Environment Setup: environment.md
+    - LaTeX Support: latex.md
+    - Markdown Features: markdown.md
+    - Translation: translate.md
+  - Server & Deployment:
+    - Server Architecture: DOCUMENTATION.md
+    - Server Configuration: server.md
+    - Client Features: client.md
+    - Publishing Games: publish_game.md
+    - Updating Games: update_game.md
+    - NPM Scripts: npm_scripts.md
+  - Reference:
+    - Changelog: changelog.md
