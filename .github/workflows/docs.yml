@@ -41,13 +41,6 @@ jobs:
       uses: actions/configure-pages@v4
 
     - name: Build documentation
-      env:
-        # 构建所有语言版本（生产环境）
-        MKDOCS_DEFAULT_LANGUAGE_ONLY: false
-        MKDOCS_BUILD_EN: true
-        MKDOCS_BUILD_ZH: true
-        MKDOCS_DEFAULT_LANGUAGE_EN: true
-        MKDOCS_DEFAULT_LANGUAGE_ZH: false
       run: |
         # Build MkDocs site for all languages
         mkdocs build --verbose
